@@ -1,0 +1,28 @@
+Matriz de adjacência:
+- Facil verificar se (i,j) é uma aresta de G
+- Adequada para grafos densos (com muitas arestas),
+pois a representação interna comporta a quantidade max
+de vertices (n²+n)/2 arestas, ou seja |E| = Θ(|V|²)
+- Espaço: Θ(|V|²)
+
+Lista de adjacência:
+- Fácil descobrir vertices adjs a um dado v (listar Adj[v])
+- Adequado para grafos esparsos (poucas arestas), |E| = Θ(|V|)
+- Espaço: Θ(|V|+|E|)
+
+TABELA ( Matriz vs Lista)
+inserir aresta: Θ(1) vs Θ(|V|)
+remover aresta: Θ(1) vs Θ(|V|*|E|)
+testar adj: Θ(|V|) vs Θ(|E|)
+listar vizinhos: Θ(|V|) vs Θ(|E|)
+
+A Programação Dinâmica implica explorar o espaço de todas as soluções possíveis, por cuidadosamente, decompor o problema em subproblemas, e então cons-truir soluções corretas para problemas maiores e maiores. Pode-se considerar que aProgramação Dinâmica opera perigosamente próxima a algoritmos de força-bruta.Apesar disso, essa estratégia opera sobre um conjunto exponencialmente grande desubproblemas sem a necessidade de examinar todos eles explicitamenta.
+
+Abordagens:
+
+TopDown-
+Como os próprios nomes sugerem, a abordagem top-down aborda o problema de forma recursiva comum, ou seja, no exemplo do algoritmo de Fibonacci (mais abaixo), começamos pelo n-ésimo número e em, recursivamente, ir calculando os valores de F[ n-1 ], F[ n-2 ], F[ n-3 ],..., F[ 2 ], F[ 1 ]. Nesta abordagem, os valores são armazenados em uma tabela e, para a i-ésima iteração, verifica-se se F[ i ] já foi calculado. 
+
+BottomUp-
+a abordagem bottom-up, vamos calculando os subproblemas menores e aumentando a complexidade com o passar do tempo, ou seja, para o exemplo de Fibonacci, começaríamos calculando F[ 1 ], depois F[ 2 ], F[ 3 ], e assim por diante até F[ n ]. Observe que, nesta abordagem, na nós sabemos que, na i-ésima iteração, F[ i-1 ] já foi resolvido, logo não precisamos verificar toda vez como na top-down. Ao consultar o exemplo 1, do Algortimo de Fibonacci, isso deve ficar mais claro. 
+
